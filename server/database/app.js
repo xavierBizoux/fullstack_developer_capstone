@@ -60,6 +60,7 @@ app.get('/fetchReviews/dealer/:id', async (req, res) => {
 app.get('/fetchDealers', async (req, res) => {
     try {
         const documents = await Dealerships.find();
+        console.log(documents)
         res.json(documents);
     } catch (error) {
         res.status(500).json({ error: 'Error fetching documents' });
